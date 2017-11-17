@@ -1,0 +1,62 @@
+*
+{
+    margin:0;
+    padding:0;
+}
+
+div#nav
+{
+    width:100%;
+    background:#99cccc;
+    margin:0;
+    padding:0;
+
+    align-content: center;
+}
+
+div#img
+{
+    display:inline-block;
+}
+
+div#nav input
+{
+    display:inline-block;
+}
+
+div#nav ul
+{
+    padding-top: 0px;
+    display:inline-block;
+}
+
+div#nav li
+{
+    display:inline-block;
+}
+
+/**
+@media all
+    and (min-device-width: 320px) 
+    and (max-device-width: 480px){
+        .li{
+            visibility: hidden;
+        }
+}
+**/
+
+div#nav li a
+{
+    display:inline-block;
+    padding:0 30px;
+    color:#006666;
+    font-family:"\5FAE\8F6F\96C5\9ED1";
+    font-size:26px;
+}
+
+/*设置鼠标滑过或悬停时变化的背景颜色*/ 
+div#nav li a:hover
+{
+    background:#ccffff;
+    text-decoration-line:underline;
+}
