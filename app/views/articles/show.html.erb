@@ -1,16 +1,24 @@
 <p>
-    <strong>Title:</strong>
+    <strong>标题:</strong>
     <%= @article.title %>
 </p>
 
 <p>
-    <strong>Text:</strong>
+  <div>作者:</div>
+  <%= @article.author_name %>
+</p>
+
+<p>
+    <br/>
+    <strong>文本:</strong>
     <%= @article.text %>
 </p>
 
 <p>
-    <strong>IsPrivate:</strong>
+    <br/>
+    <strong>是否私有:</strong>
     <%= @article.isprivate %>
 </p>
 
+<br/>
 <%= link_to 'Back', articles_path %>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :articles
 
+  # To show the root request is welcome_controller and action is index
   root 'welcome#index'
 
   post 'articles/new'

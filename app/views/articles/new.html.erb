@@ -1,23 +1,28 @@
-<h1>New Article</h1>
+<h1>新文章</h1>
 <%= form_for :article, url: articles_path do |f| %>
-<p>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
-</p>
+  <p>
+    <%= f.label :标题 %><br>
+    <%= f.text_field :title %>
+  </p>
 
-<p>
-  <%= f.label :text %><br>
-  <%= f.text_area :text %>
-</p>
+  <p>
+    <%= f.label :作者 %><br>
+    <%= f.text_field :author_name %>
+  </p>
 
-<p>
-  <%= f.submit %>
-</p>
+  <p>
+    <%= f.label :文本 %><br>
+    <%= f.text_area :text %>
+  </p>
 
-<p>
-    IsPrivate ? :<%= f.check_box :isprivate %><br />
-</p>
+  <p>
+    <%= f.submit :提交 %>
+  </p>
+
+  <p>
+    是否私有 ? :<%= f.check_box :isprivate %><br/>
+  </p>
 
 <% end %>
 
-<%= link_to 'Back', articles_path %>
+<%= link_to '返回', articles_path %>
