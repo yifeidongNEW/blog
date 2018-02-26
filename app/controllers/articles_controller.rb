@@ -7,11 +7,30 @@ class ArticlesController < ApplicationController
     end
 
     def show
-        @article = Article.find(params[:id])
+        begin
+            @article = Article.find(params[:id])
+        rescue => ex
+            p ex.class.to_s
+            # 边界条件
+            if ex.class.to_s == "ActiveRecord::RecordNotFound" then
+                # 没找到
+                render_response_status_page(404)
+                return
+            end
+        end
+
+        # 私有，则换个方法显示
+        if @article.isprivate then
+            render json: @article
+        end
     end
 
     def new
         @article = Article.new
+    end
+
+    def edit
+        @article = Article.find(params[:id])
     end
 
     def create
@@ -25,6 +44,24 @@ class ArticlesController < ApplicationController
             redirect_to @article
         else
             render 'new'
+        end
+    end
+
+    def update
+        @article = Article.find(params[:id])
+
+        if @article.update(article_params)
+
+            #render json: @article
+            #render json: @article,layout: false
+
+            #render xml: @article
+
+            #render plain: "OK"
+
+            redirect_to @article
+        else
+            render :edit
         end
     end
 
